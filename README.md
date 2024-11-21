@@ -6,7 +6,7 @@ GameStriker is a real-time game server application that helps people to track th
 ## Why?
 GameStriker was created to bring players and server communities closer together. By allowing users to add their own game servers, GameStriker provides a platform where players can easily discover, view, and connect to various game servers. With real-time server information, player stats, and a detailed historical data view.
 
-## 🚀 Quick Start
+## 🚀 Quick Start 
 1. **Clone the Repository**  
 
    ```bash 
