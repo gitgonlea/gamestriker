@@ -9,8 +9,6 @@ const { queryGameServerPlayers } = require('./queryGameServerPlayers');
 const fetchPlayerData = async (serverInfo) => {
     try {
         const state = await queryGameServerPlayers(serverInfo.host, serverInfo.port);
-
-        //console.log(state)
         return state; // Assuming players are included in the state object
     } catch (error) {
         console.error('Error fetching player data:', error);
@@ -135,8 +133,6 @@ const updatePlayTime = async (serverId) => {
             await updateDailyPlayerData(server.id, 0, newPlaytime, playerName);
             await updateDailyPlayerData(server.id, 1, newScore, playerName);
         }
-
-        //console.log(`Updated ${count} players`);
     } catch (error) {
         console.error('Error updating playtime and score:', error);
     }

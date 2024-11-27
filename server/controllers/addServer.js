@@ -58,7 +58,7 @@ const checkServerExists = async (host, port) => {
         return server !== null;
     } catch (error) {
         console.error('Error checking server existence:', error);
-        return false; // Assume server doesn't exist in case of error
+        return false; 
     }
 };
 

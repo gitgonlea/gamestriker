@@ -55,8 +55,6 @@ const getPlayer = async (req, res) => {
 
         delete modifiedRows[0].Server; // Remove Server property
 
-        //console.log(modifiedRows)
-
         const totalPages = Math.ceil(count / pageSize);
 
         return res.status(200).send({ players: modifiedRows, totalPages });

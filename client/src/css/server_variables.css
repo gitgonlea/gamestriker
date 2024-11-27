@@ -1,0 +1,100 @@
+.main-vars-container {
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    z-index: 15;
+}
+
+.server-vars-titles-container {
+    display: flex;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding-bottom: 7px;
+    padding-left: 25px;
+    padding-top: 7px;
+    z-index: 15;
+    width: 70%;
+    margin-left: 16%;
+    justify-content: space-between;
+}
+
+.server-vars-title {
+    color: rgb(255, 184, 28);
+    font-size: 17px;
+    font-weight: 600;
+    
+}
+
+.server-vars-title.servername {
+    margin-left:-15px;
+}
+
+.server-vars-title.servername .svg-inline--fa{
+    font-size: 15px;
+}
+
+.server-vars-update-ad {
+    margin-right: 10px;
+    font-size: 13px;
+    color: rgb(197, 194, 194);
+}
+
+.server-vars-container {
+    margin-left: 16%;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 70%;
+    padding: 25px 15px 25px 15px;
+    border-radius: 5px;
+}
+
+.var-desc-container {
+    display:flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.var-key {
+    flex: 2; /* Allow .var-key to take up available space */
+    padding-left: 10px; /* Add left padding for spacing */
+}
+
+.var-value {
+    flex: 1;
+    text-align: left; /* Align text in the middle */
+    padding-right: 10px; /* Add right padding for spacing */
+    color: rgb(255, 184, 28);
+}
+
+.var-404-container {
+    margin-left: 2%;
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .var-404-title {
+    position: relative;
+      padding-left: 10px;
+    margin: 0;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: red;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+
+@media (max-width:800px) {
+    .server-vars-titles-container, .server-vars-container {
+        margin-left: 3%;
+        width: 94%;
+    }
+    .var-value {
+        text-align: right;
+    }
+}

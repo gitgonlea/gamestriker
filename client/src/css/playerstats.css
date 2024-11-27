@@ -1,0 +1,176 @@
+.stats-container {
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    z-index: 15;
+}
+
+.stats-left {
+    flex: 7;
+}
+.stats-right {
+    flex: 4;
+}
+.player-stats-title {
+    color: rgb(255, 184, 28);
+    font-size: 17px;
+    font-weight: 600;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding-bottom: 7px;
+    padding-left: 25px;
+    padding-top: 7px;
+    z-index: 15;
+    width: 94%;
+    margin-left: 3%;
+}
+
+
+.stats-right .player-stats-title {
+    margin-left: -3%;
+}
+
+.info-player-container, .info-player-container-right {
+    margin-left: 3%;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 94%;
+    padding: 25px 0px 25px 25px;
+    border-radius: 5px;
+}
+
+.info-player-container-right {
+    margin-left: -3%;
+}
+
+.small-title {
+    text-transform: uppercase;
+    color: rgb(255, 184, 28);
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    z-index: 15;
+    width: 95%;
+    margin-bottom: 7px;
+    margin-top: 8px;
+}
+
+.info-player-container > div {
+    line-height: 1.4rem;
+    font-size: 15px;
+}
+
+.gap-top {
+    margin-top: 15px;
+}
+.data-player-panel {
+    display:flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.show-data-text {
+    color: rgb(255, 184, 28);
+    margin-right: 5%;
+    flex: 1;
+}
+
+.show-data-btns-container {
+    display: flex;
+    margin-right: 3.5%;
+}
+
+.show-data-btn {
+    cursor: pointer;
+    font-size: 13px;
+    background-color: rgb(25, 182, 235);
+    padding: 5px;
+    margin-left: 5px;
+    opacity: 0.8;
+}
+
+.show-data-btn:hover, .show-data-btn.active {
+    opacity: 1;
+}
+
+.player-data-chart-container {
+    display: flex;
+    flex-direction:column;
+    
+}
+
+.player-data-chart-container > div {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    padding-top: 4%;
+    padding-left: 3%;
+    padding-right: 10%;
+}
+
+.data-info {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 184, 28);
+    margin-bottom: 15px;
+}
+
+.chart-container {
+    position: relative;
+  }
+  
+  .loading-indicator {
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color:rgb(255, 184, 28);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .no-data-loaded {
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .info-player-container > div:not([class]) {
+    color:rgb(248, 215, 144);
+  }
+
+  .info-servername {
+    color: rgb(25, 182, 235);
+    font-weight: 600;
+  }
+
+  .info-online {
+    color: green;
+  }
+
+  .info-player-container > div > span:not([class]) {
+    color:white;
+  }
+
+
+  @media (max-width:1300px) {
+    .stats-left {
+        flex: 5;
+    }
+  }
+
+  @media (max-width:1000px) {
+    .stats-container{
+        display: flex;
+        flex-direction:column;
+    }
+    .stats-right {
+        margin-top: 15px;
+        margin-left:6%;
+        width: 100%;
+    }
+  }
+

@@ -15,11 +15,9 @@ GameStriker was created to bring players and server communities closer together.
 2. **Navigate to the directory** 
 
     For the client:
-    ```bash
         cd GameStriker/client
 
     For the server
-    ```bash
         cd GameStriker/server
 
 3. **Install dependencies**
@@ -36,8 +34,5 @@ GameStriker was created to bring players and server communities closer together.
     npm run dev
 
 
-## Usage
-Step-by-step instructions for using the project, with code snippets or examples.
-
-## Contributing
-Guidelines for contributing to the project.
+## LIVE VERSION
+https://argentina-strike.com

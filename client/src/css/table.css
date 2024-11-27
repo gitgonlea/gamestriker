@@ -1,0 +1,324 @@
+/*.sorting-icon {
+  margin-left: 5px; 
+  display: inline-block;
+  width: 20px; 
+  text-align: center;
+}*/
+
+.truncate-text {
+  display: block;
+  max-width: 100%;
+}
+
+
+.server-list-table {
+    position: relative;
+    border: 1px solid rgb(12, 153, 201);
+    border-collapse: collapse;
+    width: 62%;
+    color: white;
+    margin-left: auto; /* Center the table horizontally */
+    margin-right: auto; /* Center the table horizontally */
+    z-index: 11;
+    opacity: 0.94;
+  }
+
+  .first {
+    background-color: rgb(17, 186, 243);/*#6ebee4;*/
+  }
+  .second {
+    background-color: rgb(34, 172, 218);;
+  }
+
+  .dead {
+    background-color: rgb(165, 14, 14);
+  }
+
+  .server-list-header {
+    
+    font-weight: 500;
+    background-color: rgb(25, 182, 235);
+    
+  }
+
+  .server-list-header .server-list-cell {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 18px;
+  }
+
+  .server-list-header .server-list-cell .svg-inline--fa {
+    font-size: 13px;
+  }
+
+  .yellow {
+    color: rgb(255, 184, 28);
+  }
+
+  .server-list-row {
+    
+    border-bottom: 1px solid rgb(32, 179, 228);
+    transition: background-color 0.3s ease;
+  }
+
+  .server-list-cell {
+    position: relative;
+    padding: 5px;
+    font-size: 14px;
+    text-align: left;
+    width: auto; /* Set to auto or a larger value to allow more space for text */
+    max-width: 200px; /* Ensure the text is truncated when it exceeds this width */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides any text that overflows the container */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
+  }
+  
+  .server-list-cell a {
+    display: block; /* Ensures the link is treated as a block element for proper truncation */
+    max-width: 100%; /* Ensures the link doesn't overflow the parent cell */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides any text that overflows the container */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
+  }
+  .server-list-row:hover {
+    background-color: rgb(255, 184, 28);
+  }
+
+  .dead:hover {
+    background-color: rgb(224, 19, 19);
+  }
+
+  .server-list-row:hover .crown-icon {
+    color: white;
+  }
+
+
+  .rank-width {
+    text-align: center;
+    width: 8%;
+  }
+
+  .center-rank {
+    text-align: center;
+  }
+
+  .players-width {
+    width: 10%;
+    text-align: center;
+  }
+
+  .ip-width {
+    width: 20%;
+  }
+
+  .map-width {
+    max-width: 25%;
+  }
+  
+  .server-width, .servername-width {
+    width: 40%;
+    
+  }
+  
+  .truncate-text {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 70%;
+  }
+  .playerrank-width {
+    width: 8%;
+  }
+
+  .playername-width {
+    width: 60%;
+  }
+
+  .score-width {
+    width: 18%;
+  }
+
+  .playtime-width {
+    width: 15%;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .name-width {
+    width: 20%;
+  }
+
+  .total-time-width {
+    width: 10%;
+  }
+
+  .total-score-width {
+    width: 12%;
+  }
+
+  .small-table {
+    margin: 0;
+    width: 75%;
+  }
+  
+  .no-data-avalaible {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .paginator {
+    display:flex;
+    width: 60%;
+    color: white;
+    margin-left: auto; /* Center the table horizontally */
+    margin-right: auto; /* Center the table horizontally */
+  }
+
+  .page-btn {
+    cursor: pointer;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    border-color: #000000;
+    background-color: rgb(25, 182, 235);
+    color: #fff;
+    text-shadow: 1px 1px 0px #575655;
+    margin-right: 7px;
+
+    z-index: 15;
+  }
+
+  .page-btn.active {
+    text-shadow: 1px 1px 0px #000000;
+    background-color: rgb(209, 148, 17);
+  }
+
+  .server-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .gold {
+    color: rgb(255, 184, 28)
+  }
+
+  .silver {
+    color: rgb(211,211,211)
+  }
+
+  .bronze {
+    color: rgb(205, 127, 50)
+  }
+
+  @media (max-width: 767px) {
+    .server-list-table {
+      
+      width: 100%;
+    }
+    .server-list-cell {
+      font-size: 8px;
+    }
+    .server-width, .servername-width {
+      
+      width: 40%;
+    }
+    .rank-width {
+      width: 8%;
+    }
+    .map-width {
+      width: 8%;
+    }
+    
+  }
+
+  @media (max-width: 1200px) {
+    .crown-icon {
+      left: 0;
+    }
+
+  }
+
+  @media (max-width: 991px) {
+    .playerrank-width {
+      width: 9%;
+    }
+    .server-list-table {
+      width: 80%;
+    }
+
+  }
+
+  @media (max-width: 800px) {
+    .crown-icon {
+      left: 5px;
+    }
+
+    .small-table {
+      width: 95% !important;
+    }
+    .server-list-table {
+      
+      width: 100%;
+    }
+    .server-list-cell {
+      font-size: 8px;
+    }
+    .server-width, .servername-width {
+      
+      width: 40%;
+    }
+    .rank-width {
+      width: 8%;
+    }
+    .map-width {
+      width: 8%;
+    }
+    .paginator {
+      width: 100%;
+    }
+    .page-btn {
+      font-size: 7px;
+      height: 16px;
+      width: 15px;
+    }
+    
+  }
+
+
+  @media (max-width: 479px) {
+    .server-list-cell {
+      font-size: 5px;
+    }
+  }
+
+  @media (max-width: 319px) {
+    .server-list-cell {
+      font-size: 5px;
+    }
+    .rank-width {
+      width: 13.5%;
+    }
+    .server-width, .servername-width {
+      width: 19%;
+    }
+
+    .players-width {
+      width: 12%;
+    }
+    .ip-width {
+      width: 19.5%;
+    }
+    .map-width {
+      width: 18%;
+    }
+    .playername-width {
+      width: 30%;
+    }
+
+  }

@@ -38,7 +38,6 @@ const updateServerRank = async (serverId, rank) => {
         });
 
         await updateHighLow(serverId, rank);
-        //console.log(`Server rank updated successfully for server ${serverId}`);
     } catch (error) {
         console.error(`Error updating server rank for server ${serverId}: ${error}`);
     }

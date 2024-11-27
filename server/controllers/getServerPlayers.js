@@ -28,7 +28,6 @@ const getServerPlayers = async (req, res) => {
                 limit: 10
             });
         }
-        //console.log(players)
         return res.status(200).send(players);
     } catch (error) {
         console.error('Error retrieving server players:', error);

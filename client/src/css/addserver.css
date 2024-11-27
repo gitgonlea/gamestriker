@@ -1,0 +1,157 @@
+.addserver-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 300px;
+}
+
+.addserver-title {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding-left: 28px;
+    z-index: 15;
+    height: 12%;
+}
+
+.addserver-title-text {
+    text-transform: uppercase;
+    color: rgb(255, 184, 28);
+    font-size: 17px;
+    font-weight: 600;
+    
+}
+
+.redirect-countdown {
+    color: green;
+    font-size: 12px;
+    font-weight: 600;
+    padding-right: 5px;
+}
+
+.addserver-title-container {
+    margin-top: 5px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.addserver-form {
+    display: flex;
+    margin-left: 25px;
+    padding: 5px;
+    width: 90%;
+    height: 70%;
+    border-radius: 1px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 14;
+}
+
+.addserver-right-section {
+ 
+}
+
+.addserver-left-section {
+
+}
+
+.addserver-text, .addserver-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.addserver-text > span {
+    padding: 7px;
+    margin-bottom: 4%;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+.addserver-inputs {
+    
+}
+.addserver-small-input {
+    width: 50%;
+}
+
+.addserver-big-input {
+    width: 100%;
+}
+
+.addserver-inputs > input {
+    margin-bottom: 5%;
+}
+
+.button-add {
+    margin-top: 10%;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    border-color: #000000;
+    background-color: rgb(255, 184, 28);
+    color: #000000;
+    text-shadow: 1px 1px 0px #f7d68d;
+    width: 125px;
+}
+
+.response-status {
+    position: relative;
+    font-weight: 600;
+    text-align: center;
+    color:red;
+    z-index: 15;
+    padding-bottom: 50px;
+}
+
+.response-status.green {
+    font-weight: 600;
+    text-align: center;
+    color:green;
+}
+
+
+@media (max-width: 991px) {
+    .addserver-container {
+        width: 80%;
+        height: 220px;
+        margin-top: -2%;
+    }
+    .addserver-title-text {
+        font-size: 12px;
+    }
+    .redirect-countdown {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .addserver-title-container {
+        margin-top: 2%;
+    }
+    .addserver-container {
+        height: 300px;
+        
+    }
+}
+
+@media (max-width: 479px) {
+    .addserver-container {
+        margin-left:0;
+        margin-right: 0;
+        padding: 0;
+        width: 100%;
+        
+    }
+
+}
+
+
+.fa-spinner {
+    margin-left: 45%;
+}

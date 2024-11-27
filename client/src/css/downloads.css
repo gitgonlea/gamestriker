@@ -1,0 +1,73 @@
+.downloads-container {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  margin-top: 35px;
+  z-index: 1000;
+}
+
+.downloads-item {
+  color:white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.downloads-item:hover {
+  color: yellow;
+}
+
+.fa-square-plus, .fa-square-minus {
+  cursor: pointer;
+  margin-top: 14px;
+  margin-left: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.gsclient-info {
+  display: none; /* Initially hidden */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 15px;
+  color:white;
+  background-color: black;
+}
+
+.center-text {
+  margin-top:12px;
+  text-align: center;
+}
+
+.gsclient-info p {
+  font-size: 15px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.hidenclass {
+  display: none;
+}

@@ -1,0 +1,514 @@
+.recharts-text .recharts-cartesian-axis-tick-value {
+  display: none !important;
+  font-size: 0px !important;
+}
+
+.server-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    z-index: 15;
+    font-size: 15px;
+    max-width: 60%;
+}
+
+.server-info-section > div {
+    margin-bottom: 7px;
+}
+
+.server-info-title {
+
+}
+
+.server-info-desc {
+    color: rgb(255, 184, 28);
+    font-weight: 600;
+}
+
+.status {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.online {
+  color: rgba(41, 217, 145, 0.8);
+}
+
+.offline {
+  color: rgba(236, 69, 69, 0.8);
+}
+
+.top-title {
+    position: relative;
+    margin-top:15px;
+    font-weight: 600;
+    display:flex;
+    justify-content: left;
+    color: white;
+    z-index: 15;
+    color: rgb(255, 184, 28);
+}
+
+.tables-container {
+    margin-left: 3%;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 95%;
+    padding: 25px 0px 25px 25px;
+    border-radius: 5px;
+}
+
+.server-details, .historical-data {
+  display:flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  padding-bottom: 7px;
+  padding-left: 25px;
+  padding-top: 7px;
+  z-index: 15;
+  width: 95%;
+   margin-left: 3%;
+}
+
+.last-update-time-elapsed {
+  display:flex;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 13px;
+  color: rgb(197, 194, 194);
+}
+
+.server-details-title, .historical-data, .server-404-title {
+    text-transform: uppercase;
+    color: rgb(255, 184, 28);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.server-complete-details
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.server-map-wrapper {
+    margin-right: 4%;
+}
+
+.server-map-info {
+    max-width: 160px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 1px;
+    border-radius: 5px;
+}
+
+.server-mapname {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    z-index: 12;
+}
+
+.server-mapimage {
+  position: relative;
+  width: 100%; /* or a specific width */
+  height: auto; /* adjust as needed */
+
+}
+
+.server-mapimage-404 {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+.current-map {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(41, 217, 145, 0.8);
+    font-weight: 700;
+    z-index: 12;
+}
+
+.ranking {
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: linear-gradient(to right, 
+    rgba(8, 173, 228, 0.832) 0%,  
+    rgba(255, 255, 255, 0.918) 35%,  
+    rgba(255, 184, 28, 0.952) 50%,  
+    rgba(255, 255, 255, 0.918) 65%, 
+    rgba(8, 173, 228, 0.832) 100%
+    /*
+    rgba(255, 0, 0, 0.8) 0%,  
+    rgba(236, 236, 27, 0.952) 50%,  
+    rgba(0, 128, 0, 0.8) 100% 
+    */
+  );
+  }
+  
+  .progress {
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align text to the right corner */
+    padding-right: 5px; /* Add padding for some spacing */
+  }
+
+  .progress > span {
+    font-size: 13px;
+    background-color: black;
+    padding: 3px;
+    border-radius: 5px;
+  }
+  
+  .percentage {
+    margin-right: 5px; /* Add some margin to separate text from the border */
+  }
+
+  .ranking-details {
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .current-players {
+    margin-top: 5px;
+    position: relative;
+    font-size: 13px;
+    z-index: 15;
+    color: rgba(41, 217, 145, 0.8);
+  }
+
+  .current-players-count {
+    color: white;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
+  .left-info {
+    /* Set width or use margin/padding to create space */
+    flex: 7; /* Adjust the width as needed */
+  }
+  
+  .right-info {
+    margin-right: 5%;
+    background-color: rgba(0, 0, 0, 0.6);
+    flex: 2; /* Adjust the width as needed */
+  }
+
+  .right-info-box {
+    display: flex; /* Establece el contenedor como un flexbox */
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-top: 20px;
+  }
+  .chart-background, .no-map-data {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 95%;
+    padding: 5px;
+    border-radius: 1px;
+    z-index: 14;
+  }
+
+  .chart.pie {
+    margin-top: -20%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .chart-margin
+  {
+    width: 250%;
+    margin-top: 5%;
+    margin-left: -5%;
+  }
+
+  .historical-data {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .data-title-details {
+    display:flex;
+    justify-content: space-between;
+    width: 90%;
+    color: rgba(41, 217, 145, 0.8);
+  }
+
+  .data-label-type {
+    position: relative;
+    z-index: 15;
+    font-size: 16px;
+  }
+
+  .data-label-time {
+    position: relative;
+    font-size: 14px;
+    z-index: 15;
+  }
+
+  .data-label-time-players {
+    position: relative;
+    font-size: 12px;
+    z-index: 15;
+    cursor: pointer;
+  }
+
+  .data-label-time > span {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .selected {
+    color:white;
+  }
+
+    .chart-players {
+        height: 50vh;
+        z-index: 50;
+    }
+
+    .chart-players-box {
+        margin-top: 30px;
+    }
+
+    .server-404-container {
+      margin-left: 2%;
+      width: 95%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .server-404 {
+      padding: 15px;
+      
+    }
+
+    .server-404-title {
+      margin: 0;
+      width: 100%;
+      font-size: 20px;
+      margin-bottom: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: red;
+    }
+
+    .server-404-title, .server-404-reasons {
+      position: relative;
+      padding-left: 10px;
+      z-index: 15;
+    }
+
+    .server-404-lor {
+      position: relative;
+      line-height: 1.5rem;
+      z-index: 15;
+    }
+
+    .no-data {
+      position: relative;
+      text-align: center;
+      color: red;
+      margin-top: 30%;
+    }
+
+    .recharts-default-tooltip
+    {
+      background-color: black !important;
+      color: black !important;
+    }
+
+    .no-topdata {
+      color: white;
+      font-size: 14px;
+      margin-right: 50px;
+    }
+
+    .tippy-tooltip {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .unknown-map {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(236, 69, 69, 0.8);
+    }
+    .unknown-map .svg-inline--fa {
+      margin-left: 5px;
+    }
+
+    .banner-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      z-index: 15;
+    }
+
+    .banner {
+      cursor: pointer;
+      margin-top: 5px;
+      width: 50%;
+    }
+
+    .get-banner {
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .get-banner > span:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .modal-get-banner {
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 0.9;
+      padding: 5px 20px 20px 20px;
+      border-radius: 3px;
+      position: fixed; /* Use fixed position */
+      top: 50%; /* Adjust the top position as needed */
+      left: 50%; /* Adjust the left position as needed */
+      transform: translate(-50%, -50%); /* Center the container */
+      color: white;
+
+      z-index: 1001; /* Ensure it appears above .shop-form */
+    }
+
+    .modal-get-banner-btn-container {
+      display:flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .get-banner-item {
+      cursor: pointer;
+      padding: 5px 5px 2px 5px;
+
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 12px;
+      border-color: #000000;
+      background-color: rgb(255, 184, 28);
+      color: #000000;
+      text-shadow: 1px 1px 0px #f7d68d;
+      margin-left: 5px;
+      transition: background-color 0.2s ease;
+      
+    }
+
+    .active {
+      text-shadow: 1px 1px 0px #c7b897;
+      background-color: rgb(209, 148, 17);
+    }
+
+    .left-modal-get-banner {
+      display: flex;
+      flex: 4;
+      margin-bottom: 2px;
+    }
+
+    .close-modal-get-banner {
+      cursor: pointer;
+      font-size: 21px;
+    }
+
+    .modal-get-banner-code {
+      background-color: rgba(0, 0, 0, 1);
+    }
+
+    .get-banner-item.clip {
+      
+      width: 52px;
+    }
+    .copy {
+      text-align: center;
+    }
+
+    .chart-background.chart-players {
+      height: 100%;
+    }
+
+    @media (max-width:800px) {
+    
+    .info-container {
+      flex-direction: column;
+  }
+  .right-info {
+    margin-left: 3%;
+    width: 95%;
+  }
+  .chart-margin
+  {
+    margin-left: 17%;
+  }
+
+}
+@media (max-width:1200px) {
+  
+  .banner > img {
+    width: 100%;
+  }
+  .banner {
+    width: 85%;
+  }
+  
+}
+
+.rank_highlow {
+  margin-left: 30px;
+}
+
+.is-bot {
+  text-shadow: 1px 1px 0px #646462;
+  color: rgb(255, 184, 28);
+}
+
+.no-map-data {
+  display:flex; 
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: rgb(255, 184, 28);
+}
+
+.server-vars {
+  width: 190px;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  background-color: rgba(255, 184, 28, 0.8);
+  color: black;
+  transition: background-color 0.5s ease;
+}
+
+.server-vars:hover {
+  background-color: rgb(255, 184, 28);
+}

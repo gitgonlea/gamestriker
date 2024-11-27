@@ -1,0 +1,279 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Jersey+10&family=Jersey+10+Charted&display=swap');
+
+.svg-inline--fa {
+    position: relative;
+    margin-right:7px;
+    z-index: 15;
+  }
+  
+
+  .logo img{
+    width: 150px;
+    margin-left: 5px;
+    border-radius: 5px;
+  }
+
+  .sun {
+    width: 40px;
+    height: 40px;
+  }
+
+  .flag-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 15;
+    width: 70%;
+  }
+
+  .ad {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+  
+  .arg-flag {
+    position: relative;
+  }
+  
+  .arg-flag img {
+    display: block;
+    width: 120px;
+    border-radius: 5px;
+  }
+
+  .arg-title-container {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    height: 75px;
+  }
+  
+  .arg-title {
+    font-family: "Jersey 10", sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 31px;
+    padding: 5px; /* Adjust as needed for spacing */
+    margin-right: -0.5%;
+    margin-bottom: -5px;
+  }
+
+  .arg-title:hover {
+    color: rgb(255, 184, 28);
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+  }
+  
+  .logo-container div {
+    margin-right: 10px; /* Add some spacing between the elements */
+  }
+
+  .flag-container {
+    margin-left: 2%;
+    margin-bottom: -1%;
+    padding-bottom: 15px;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  nav {
+    position:relative;
+    display:flex;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background: rgb(08, 172, 228);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+    margin-left: 2%;
+    border-radius: 2px;
+    z-index: 14;
+    opacity: 0.9;
+    width: 70%;
+  }
+  
+  .nav-left-items {
+    display:flex;
+    padding-left: 10px;
+    text-shadow: 1px 1px 0px #000000;
+  }
+  
+  .nav-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .nav-right-items {
+    /*display:flex;*/
+    padding-right: 16px;
+  }
+  
+  .nav-item {
+    cursor: pointer;
+    font-size: 15px;
+    width: 170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+  }
+
+
+  .nav-item::before {
+    content: '';
+    position: absolute;
+    top: -55%;
+    left: 50%; /* Set to the horizontal center of the parent */
+    transform: translateX(-50%); /* Center the pseudo-element horizontally */
+    height: 38px; /* Adjust the height to include padding */
+    width: calc(100%); /* Adjust the width to include padding */
+    background: rgb(15, 188, 247);
+    border-radius: 5px;
+    z-index: 11;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .nav-item:hover::before {
+    opacity: 1; /* Show the pseudo-element on hover */
+  }
+
+  .nav-item:hover {
+    color: rgb(255, 184, 28);
+  }
+  
+
+  .nav-item.bulb {
+    width: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .nav-item.bulb::before {
+    position:unset;
+    left: 55%;
+    height: 35px;
+    width: calc(70%);
+    padding: 0;
+  }
+
+  .darkmode .nav-item::before {
+    background: #1b1d1d;
+  }
+
+
+  .mobile-logo {
+    display: none;
+  }
+/*
+.nav-section {
+  width: 1px;
+    height: 40px; 
+    background-color: #ccc; 
+    margin: 0 10px; 
+}*/
+
+.darkmode .nav-section {
+  border-left:  1px solid white;
+}
+
+.nav-text {
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+}
+/*
+.bulb {
+    display: inline-block; 
+    padding: 5px; 
+    background-color: gray; 
+    border-radius: 50%; 
+}*/
+  
+@media (max-width: 767px) {
+  .nav-text {
+    display: none;
+  }
+
+  .non-mobile-title {
+    display: none;
+    
+  }
+  .nav-item::before {
+    padding: 0;
+  }
+
+  .nav-item {
+    width: 50px;
+  }
+
+  .flag-container, nav {
+    margin-left: 0;
+    width: 95%;
+  }
+
+  .arg-flag img {
+    width: 80px;
+  }
+  
+  .arg-title {
+    font-size: 19px;
+  }
+
+  .ad {
+    font-size: 11px;
+  }
+  
+}
+
+@media (max-width: 350px) {
+  .separator {
+    display: none;
+  }
+  
+  .right-panel {
+    display: block !important; 
+  }
+  .bulb {
+    display:none;
+  }
+}
+
+.darkmode nav {
+  color:white;
+  background: #020404;
+}
+
+.right-panel {
+  padding: 20px;
+}
+
+.right-panel {
+  position: absolute;
+  cursor:pointer;
+  top: 50px; /* Adjust this according to the height of your navbar */
+  right: 0;
+  color: black;
+  padding: 10px;
+  display: none; /* Hide by default */
+}
+
+.darkmode .right-panel {
+  color: white;
+}

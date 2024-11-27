@@ -24,7 +24,6 @@ const saveServerVariables = async () => {
       });
     }
 
-    console.log('Server variables saved successfully');
   } catch (error) {
     console.error('Error saving server variables:', error);
   }

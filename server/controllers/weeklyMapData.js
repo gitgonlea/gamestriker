@@ -37,7 +37,6 @@ const weeklyMapData = async () => {
             }
         }));        
 
-        console.log("Weekly map data updated successfully.");
     } catch (error) {
         console.error("Error updating weekly map data:", error);
     }

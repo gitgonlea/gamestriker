@@ -77,8 +77,6 @@ async function processServer(server) {
                     io.to(address).emit('serverUpdated');
                 }
                 
-                //console.log(`Server data updated ${data.host}:${data.port}`);
-                
             } catch (error) {
                 console.log(error);
             }

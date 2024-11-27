@@ -27,8 +27,6 @@ const generateBanner = async (data, playerStats) => {
 
   try {
      image = await loadImage(path.join(process.cwd(), 'banner.png')); // Load image from file
-   // console.log('Image loaded successfully');
-
   } catch (err2) {
     console.error('Error loading image:', err2);
     return; 
@@ -40,7 +38,6 @@ const generateBanner = async (data, playerStats) => {
   let chartBuffer
   try {
     chartBuffer = await generateChartImage(playerStats);
-   // console.log('Chart image generated successfully');
   } catch (err) {
     console.error('Error generating chart image:', err);
   }
@@ -187,8 +184,7 @@ const generateBanner = async (data, playerStats) => {
     ctx.font = `${fontWeight} ${noDataFont}px Arial`;
     ctx.fillText(noDataTitle, marginLeft + 4.2 * noDataSpacing, currentY + lineHeight + 20);
   }
-  
-  // Convert canvas to a PNG buffer
+
   const buffer = canvas.toBuffer('image/png');
 
   const serverFolderName = String(data.host + ':' + data.port)
@@ -203,7 +199,6 @@ const generateBanner = async (data, playerStats) => {
 
 if (!fs.existsSync(folderPath)) {
   fs.mkdirSync(folderPath, { recursive: true });
-  console.log('Folder created successfully:', folderPath);
 }
 
   fs.writeFile(path.join(folderPath, serverImageName), buffer, (err) => {
@@ -211,7 +206,6 @@ if (!fs.existsSync(folderPath)) {
         console.error('Error writing file:', err);
         return;
     }
-    console.log('File written successfully!');
   });
   };
 
