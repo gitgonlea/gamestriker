@@ -17,35 +17,37 @@ const fetchPlayerData = async (serverInfo) => {
 };
 
 const updatePlayTime = async (serverId) => {
+
+    //if(serverId !== 33) return
     try {
-        
         const servers = await Server.findAll({
             where: { id: serverId },
             attributes: ['id', 'host', 'port']
         });
 
         if (servers.length < 1) return;
-
+    
         const server = servers[0];
         const online = 1;
-        //let count = 0;
-
+    
+        // Mark all players offline before updating
         await PlayerData.update({ online: 0 }, {
             where: {
                 server_id: server.id
             }
         });
-
+    
         const serverInfo = {
             type: 'counterstrike16', // Adjust this according to your game type
             host: server.host,
             port: server.port
         };
-
+    
         const playerData = await fetchPlayerData(serverInfo);
-
+    
         if (playerData.length < 1) return;
-
+    
+        // Fetch previous player data
         const previousPlayerData = await PlayerData.findAll({
             where: {
                 server_id: server.id,
@@ -53,70 +55,52 @@ const updatePlayTime = async (serverId) => {
             },
             attributes: ['player_name', 'score', 'playtime', 'previous_playtime', 'previous_score', 'BOT', 'last_seen']
         });
-
-        for (const player of previousPlayerData) {
-            const playtimeHours = player.playtime / 3600;
-            if (playtimeHours > 20 && player.score < 10 && player.BOT !== 1) {
-                await PlayerData.update({ BOT: 1 }, {
-                    where: {
-                        server_id: server.id,
-                        player_name: player.player_name
-                    }
-                });
-            }
-        }
-
+        
         const previousPlayerMap = {};
         for (const { player_name, playtime, score, previous_playtime, previous_score, last_seen } of previousPlayerData) {
             previousPlayerMap[player_name] = { playtime, score, previous_playtime, previous_score, last_seen };
         }
-
+    
         for (const player of playerData) {
-
             const playerName = player.name;
-
             const currentPlaytime = player.online;
             const currentScore = player.score;
-
-            // Retrieve the previous playtime and score or default to 0 if not available
-            const { playtime: allTimePlaytime = 0, score: allTimeScore = 0, previous_playtime: previousPlaytime = 0, previous_score: previousScore = 0, last_seen: lastSeen} = previousPlayerMap[playerName] || {};
-
-
+    
+            // Retrieve the previous player state
+            const {
+                playtime: allTimePlaytime = 0,
+                score: allTimeScore = 0,
+                previous_playtime: previousPlaytime = 0,
+                previous_score: previousScore = 0,
+                last_seen: lastSeen
+            } = previousPlayerMap[playerName] || {};
+    
             const currentTime = new Date();
-            currentTime.setHours(currentTime.getHours() + 1);
-            // Calculate the difference in milliseconds
-            const timeDifferenceInMs = currentTime - lastSeen;
-
-            // Convert the difference to minutes
-            const timeDifferenceInMinutes = Math.floor(timeDifferenceInMs / (1000 * 60));
-
-            
-
-            // Calculate the actual playtime difference
-            let playtimeDifference;
-            if (currentPlaytime >= previousPlaytime && timeDifferenceInMinutes < 16) {
-                playtimeDifference = Math.max(0, currentPlaytime - previousPlaytime);
+            const lastSeenTime = lastSeen ? new Date(lastSeen) : null;
+    
+            let playtimeDifference = 0;
+            let scoreDifference = 0;
+    
+            // Calculate playtime only if last seen is recent
+            if (lastSeenTime && (currentTime - lastSeenTime) / (1000 * 60) < 16) {
+                if (currentPlaytime >= previousPlaytime) {
+                    playtimeDifference = currentPlaytime - previousPlaytime;
+                }
             } else {
-                
-                playtimeDifference = currentPlaytime; // If playtime is less (possibly reset), take the current playtime directly
+                playtimeDifference = currentPlaytime; // Assume reset if last seen is too old
             }
-
-            // Calculate the actual score difference
-            let scoreDifference;
-            if (currentScore >= previousScore && currentScore > 0) {
-
-                scoreDifference = Math.max(0, currentScore - previousScore);
+    
+            // Calculate score difference
+            if (currentScore >= previousScore) {
+                scoreDifference = currentScore - previousScore;
             } else {
-                scoreDifference = currentScore; // Reset detected, add the current score directly
+                scoreDifference = currentScore; // Assume reset if score decreased
             }
-
-            scoreDifference = Math.max(0, scoreDifference);
-            // Update the new playtime by adding the playtime difference to the previous playtime
+    
             const newPlaytime = allTimePlaytime + playtimeDifference;
-            
-            // Update the new score by adding the score difference to the previous score
             const newScore = allTimeScore + scoreDifference;
-           
+    
+            // Upsert player data
             await PlayerData.upsert({
                 server_id: server.id,
                 player_name: playerName,
@@ -127,15 +111,16 @@ const updatePlayTime = async (serverId) => {
                 current_playtime: currentPlaytime,
                 current_score: currentScore,
                 previous_playtime: currentPlaytime,
-                previous_score: currentScore > 0 ? currentScore : 0
+                previous_score: currentScore
             });
-           
-            await updateDailyPlayerData(server.id, 0, newPlaytime, playerName);
-            await updateDailyPlayerData(server.id, 1, newScore, playerName);
+    
+            await updateDailyPlayerData(server.id, 0, newPlaytime, playerName); // Playtime update
+            await updateDailyPlayerData(server.id, 1, newScore, playerName);   // Score update
         }
     } catch (error) {
         console.error('Error updating playtime and score:', error);
     }
+    
 };
 
 const updateDailyPlayerData = async (serverId, type, value, playerName) => {

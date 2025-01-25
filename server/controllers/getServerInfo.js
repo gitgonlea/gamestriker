@@ -36,13 +36,10 @@ const getServerInfo = async (req, res) => {
             };
         }
 
-        //console.log(server)
         if (server.WeeklyMapData[0] && server.WeeklyMapData[0].map_data) {
             // Parse map_data attribute into an object
             server.WeeklyMapData[0].map_data = JSON.parse(server.WeeklyMapData[0].map_data);
         
-            // Now you can access the parsed map_data
-            //console.log(server.WeeklyMapData[0].map_data);
         } else 
         {
             server.dataValues.WeeklyMapData = {

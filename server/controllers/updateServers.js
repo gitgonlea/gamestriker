@@ -27,8 +27,8 @@ const updateServerData = async () => {
     try {
         // Fetch all servers
         const servers = await Server.findAll();
-
         for (const [index, server] of servers.entries()) {
+
             const delay = getRandomDelay(MIN_DELAY_MS, MAX_DELAY_MS);
             // Set the delay for processing the server without waiting
             setTimeout(() => {
@@ -37,7 +37,7 @@ const updateServerData = async () => {
                     const additionalDelay = 1//3 * 60 * 1000; // 1 minute
                     setTimeout(updateServerData, additionalDelay);
                 }
-            }, delay);
+            }, delay);  
         }
     } catch (error) {
         console.error('Error fetching servers from database:', error);
@@ -45,11 +45,11 @@ const updateServerData = async () => {
 };
 
 async function processServer(server) {
+    //if(server.id !== 33) return
+    //console.log(server.id)
     try {
-        //if(server.id !== 8) return;
-
         const state = await queryGameServer(server.host, server.port);
-
+  
         if (state) {
             const data = {
                 servername: state.name,
